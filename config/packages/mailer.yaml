@@ -1,0 +1,6 @@
+framework:
+    mailer:
+        dsn: '%env(MAILER_DSN)%'
+        # dsn: 'null://null' #désactive l'envoi de mails
+        envelope: 
+            'recipients': ['gregoire.constant.gc@gmail.com'] # envoie tout les mails à cette adresse pendant la phase de dev afin d'éviter qu'elle ne s'envoie aux personnes concernés quand le site est en production

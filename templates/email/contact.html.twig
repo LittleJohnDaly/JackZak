@@ -1,0 +1,16 @@
+<h2>Coordonées du contact</h2>
+
+<ul>
+    <li>Nom : {{ firstName ~ ' ' ~ lastName|upper }}</li>
+    {% if company is not empty %}
+    <li>Entreprise : {{ company }}</li>
+    {% endif %}
+    <li>Email {{ emailAddress }}</li>
+</ul>
+
+
+<h2>Objets : {{ subject }}</h2>
+
+<p>{{ message|nl2br }}</p>
+
+<img src="{{ email.image('@images/logo.png') }}" alt="logo {{ contact_company }}">
