@@ -9,6 +9,11 @@
 
 /* **************************************** GLOBAL **************************************** */
 
+    body {
+        background-image: url("../img/bg_wave.png");
+        background-repeat: no-repeat;
+    }
+
     * {
         font-family: 'Open Sans', sans-serif;
     }
