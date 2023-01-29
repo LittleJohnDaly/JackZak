@@ -1,0 +1,19 @@
+<div class="row my-5">
+    <div class="col-12 text-center my-5">
+        <h1>{{ title|upper }}</h1>
+    </div>
+    {% for product in products %}
+            <section class="{{ loop.index is odd ? 'bg-light' : '' }}">
+                <div class="container px-5 my-5 align-items-center">
+                    <div class="row gx-5 align-items-center  {{ loop.index is odd ? '' : 'flex-row-reverse' }}">
+                        <div class="col-lg-6 d-flex justify-content-center"><img class="img-fluid rounded mb-5 mb-lg-0 w-75" src="{{ asset('img/product/' ~ product.img1) }}" alt="{{ product.alt1 }}"></div>
+                        <div class="col-lg-6">
+                            <h2 class="fw-bolder">{{ product.title }}</h2>
+                            <p class="lead fw-normal text-muted mb-0 py-3">{{ product.abstract }}</p>
+                            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{{ path('product_show', {'slug': product.slug}) }}">Voir le livre</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    {% endfor %}
+</div>

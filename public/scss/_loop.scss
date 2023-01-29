@@ -1,0 +1,17 @@
+$themeColours: (
+  "bleu-1": $bleu-1,
+  "bleu-2": $bleu-2,
+  "bleu-3": $bleu-3,
+  "bleu-4": $bleu-4,
+  "gris-1": $gris-1,
+  "gris-2": $gris-2,
+  "gris-3": $gris-3,
+  "gris-4": $gris-4,
+);
+
+@each $themeColour, $i in $themeColours {
+    .#{$themeColour} {
+      color: $i;
+    }
+}
+  

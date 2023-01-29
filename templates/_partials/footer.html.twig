@@ -1,0 +1,46 @@
+<div class="container-fluid bg-dark text-light">
+    <div class="row text-center p-5">
+        <div class="col-4">
+            <h5>LIVRES</h5>
+            <hr class="m-3">
+            <ul class="m-3">
+                <li class="text-start"><a class="text-light" href="">Joh.1 L'effondrement</a></li>
+                <li class="text-start"><a class="text-light" href="">Sur les ailes d'un papillon</a></li>
+                <li class="text-start"><a class="text-light" href="">Les morsures du passé</a></li>
+                <li class="text-start"><a class="text-light" href="">Impardonnables</a></li>
+                <li class="text-start"><a class="text-light" href="">Les chroniques des gardiens 1. Enfants de Nonna</a></li>
+            </ul>
+        </div>
+        <div class="col-4">
+            <h5>EXTRAITS</h5>
+            <hr class="m-3">
+            <ul class="m-3">
+                <li class="text-start"><a class="text-light" href="">Joh.1 L'effondrement</a></li>
+                <li class="text-start"><a class="text-light" href="">Sur les ailes d'un papillon</a></li>
+                <li class="text-start"><a class="text-light" href="">Les morsures du passé</a></li>
+                <li class="text-start"><a class="text-light" href="">Impardonnables</a></li>
+                <li class="text-start"><a class="text-light" href="">Les chroniques des gardiens 1. Enfants de Nonna</a></li>
+            </ul>
+        </div>
+        <div class="col-4">
+            <h5>COORDONNÉES</h5>
+            <hr class="m-3">
+            <p class="m-1">{{ contact_company }}</p>
+            <p class="m-1">{{ contact_address }}</p>
+            <p class="m-1">{{ contact_zip ~ ' ' ~ contact_city }}</p>
+            <p class="m-1">{{ contact_phone }}</p>
+            <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>
+        </div>
+    </div>
+    <hr class="m-2">
+    <div class="container bg-dark text-light py-2">
+        <div class="row align-items-center">
+            <div class="col-lg-6 text-lg-start">Copyright &copy; {{ "now"|date("Y") }} - JackZak </div>
+            <div class="col-lg-6 text-lg-end">
+                <a class="text-light text-decoration-none me-3" href="#!">CGU</a>
+                <a class="text-light text-decoration-none me-3" href="#!">CGV</a>
+                <a class="text-light text-decoration-none" href="{{ path('mentions') }}">Mentions légales</a>
+            </div>
+        </div>
+    </div>
+</div>

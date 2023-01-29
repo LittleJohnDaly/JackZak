@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} A propos {% endblock %}
+
+{% block body %}
+        <header class="py-5">
+                <div class="container d-flex justify-content-center">
+                        <div class="col-6">
+                                <div class="row justify-content-center align-items-center">
+                                        <div class="col-10">
+                                                <div class="my-5">
+                                                        <h1 class="fw-bolder mb-3 text-center">A propos de l'auteur JackZak</h1>
+                                                        <p class="lead fw-normal text-muted mb-4" style="text-align: justify;">Depuis sa plus tendre enfance, Florian s’essaie à l’écriture. Il écrit sa première nouvelle à huit ans, inspiré par la saga des Chair de poule qu’il collectionne. Plus tard, adolescent, il poursuivra l’écriture de nouvelles noires ; ce domaine, il l’apprécie particulièrement pour tenir en haleine ses quelques lecteurs. Il laissera de côté l’écriture de nombreuses années, préoccupé par ses études et les divers projets qu’il met en place. C’est un « touche à tout » et un amoureux de la vie, mais il se rend vite compte que quelque chose manque à son quotidien. Un soir, il se saisira de quelques feuilles volantes pour écrire son tout premier roman. Depuis, cette passion ne l’a plus quitté. Il s’inspirera de ses expériences personnelles mais surtout professionnelles pour la construction de son univers. En effet, exerçant comme éducateur spécialisé dans l’accompagnement psycho-éducatif, il rencontrera des personnes atypiques et riches de leurs vécues, parfois tragiques, parfois embrassant l’espoir. C’est de ce matériel qu’il façonna ses protagonistes criants de vérité, et offrira des intrigues surprenantes et addictives !</p>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="col-4 ">
+                                <div class="row justify-content-center align-items-center h-100">
+                                        <div class="col-10 d-flex justify-content-center">
+                                        <img class="img-fluid w-100 rounded-5" src="{{ asset('img/jackzak.jpg') }}" alt="">
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </header>
+        <div class="container px-5 my-5">
+                <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-8 col-xl-6">
+                                <div class="text-center">
+                                        <h2 class="fw-bolder">Les projets</h2>
+                                        <p class="lead fw-normal text-muted mb-5">Vous retrouverez tous mes projets ou investissements ici !</p>
+                                </div>
+                        </div>
+                </div>
+                <div class="row gx-5">
+                        <div class="col-lg-4 mb-5">
+                                <div class="card h-100 shadow border-0">
+                                        <img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="...">
+                                        <div class="card-body p-4">
+                                                <a class="text-decoration-none link-dark stretched-link" href="#association"><h5 class="card-title mb-3">Récolte de fond pour l'association les petits écoliers</h5></a>
+                                                <p class="card-text mb-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        </div>
+                                </div>
+                        </div>
+
+                        <div class="col-lg-4 mb-5">
+                                <div class="card h-100 shadow border-0">
+                                        <img class="card-img-top" src="{{ asset('img/joh2.jpg') }}" alt="...">
+                                        <div class="card-body p-4">
+                                                <a class="text-decoration-none link-dark stretched-link" href="https://fr.ulule.com/thriller-joh-resilience/"><h5 class="card-title mb-3">Projet Ulule</h5></a>
+                                                <p class="card-text mb-0">Cagnotte permettant de créer de nouveaux livres et m'aider dans mon développement en tant qu'auteur </p>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="col-lg-4 mb-5">
+                                <div class="card h-100 shadow border-0">
+                                        <img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="...">
+                                        <div class="card-body p-4">
+                                                <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Lorem</h5></a>
+                                                <p class="card-text mb-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+{% endblock %}

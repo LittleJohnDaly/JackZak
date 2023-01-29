@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Livres{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        {% include 'components/products.html.twig' with {
+            'title' : 'Livres',
+            'products' : products
+        } %}
+
+    </div>
+
+{% endblock %}

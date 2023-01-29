@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h1 class="text-center text-uppercase mt-5">Blog</h1>
+        {% include 'components/blog.html.twig' with {
+            'title' : 'Blog',
+            'blogs' : blogs
+        } %}
+    </div>
+
+{% endblock %}

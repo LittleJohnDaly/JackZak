@@ -1,0 +1,14 @@
+<header class="py-5 bg-image position-relative text-center my-5 d-flex">
+    <img src="{{ asset('img/jackzaklogo.jpg') }}" alt="" style="filter: blur(3px); object-fit: cover; "
+    class="position-absolute top-0 left-0 h-100 w-100">
+    <div class="row gx-5 justify-content-center align-items-center position-relative">
+        <div class="col-lg-6">
+            <h1 class="display-5 fw-bolder text-dark mb-5">{{ contact_company|upper }}</h1>
+            <p class="lead fw-normal text-dark mb-5">Depuis sa plus tendre enfance, Florian s’essaie à l’écriture. Il écrit sa première nouvelle à huit ans, inspiré par la saga des Chair de poule qu’il collectionne. Plus tard, adolescent, il poursuivra l’écriture de nouvelles noires ; ce domaine, il l’apprécie particulièrement pour tenir en haleine ses quelques lecteurs.</p>
+            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center ">
+                <a class="btn btn-primary btn-lg px-4 me-sm-3" target="_blank" href="https://www.facebook.com/JackZakAuteur"><i class="bi bi-facebook"></i></a>
+                <a class="btn btn-secondary btn-lg px-4" href="{{ path('about') }}">A propos</a>
+            </div>
+        </div>
+    </div>
+</header>

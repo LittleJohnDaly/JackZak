@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+
+
+    <div class="container">
+        {% include 'components/about.html.twig' %}
+        {% include 'components/products.html.twig' with {
+            'title' : 'Meilleures ventes',
+            'products' : products
+        } %}
+        <<h1 class="text-center text-uppercase mt-2">Blog</h1>
+        {% include 'components/blog.html.twig' with {
+            'title' : 'Blog',
+            'blogs' : blogs
+        } %}
+    </div>
+
+{% endblock %}

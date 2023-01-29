@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+	<div class="container px-5">
+		<a class="navbar-brand" href="{{ path('app_home') }}">
+			<img class="logo w-25" src="{{ asset('img/logo.png') }}" alt="logo JackZak">
+		</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+				<li class="nav-item"><a class="nav-link" href="{{ path('app_home') }}">Accueil</a></li>
+				<li class="nav-item"><a class="nav-link" href="{{ path('products') }}">Livres</a></li>
+				<li class="nav-item"><a class="nav-link text-nowrap" href="{{ path('about') }}">A propos</a></li>
+				{% if is_granted('ROLE_SUPER_ADMIN', 'ROLE_ADMIN') %}
+					<li class="nav-item"><a class="nav-link" href="{{ path('admin') }}" class="text-light" title="utilisateurs">Admin</a></li>
+				{% endif %}
+				<li class="nav-item"><a class="nav-link" href="{{ path('contact') }}">Contact</a></li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+						<i class="bi bi-person-circle"></i>
+					</a>
+					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+						{% if app.user %}
+							<li>
+								<a class="dropdown-item" href="{{ path('app_logout') }}">Déconnexion</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="#">Mon compte</a>
+							</li>
+						{% else %}
+							<li>
+								<a class="dropdown-item" href="{{ path('app_login') }}">Se connecter</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="{{ path('app_register') }}">S'inscrire</a>
+							</li>
+						{% endif %}
+					</ul>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('cart') }}">
+						<i class="bi bi-cart-fill"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>

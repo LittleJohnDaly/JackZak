@@ -1,0 +1,70 @@
+/* ignore the code below */
+.navbar-light {
+	.navbar-brand {
+		color: #fff;
+		font-size: 25px;
+		text-transform: uppercase;
+		font-weight: bold;
+		letter-spacing: 2px;
+	}
+	.navbar-nav {
+		.active {
+			>.nav-link {
+				color: #fff;
+			}
+		}
+		.nav-link.active {
+			color: #fff;
+		}
+		.nav-link.show {
+			color: #fff;
+		}
+		.show {
+			>.nav-link {
+				color: #fff;
+			}
+		}
+		.nav-link {
+			color: #fff;
+			&:focus {
+				color: #fff;
+			}
+			&:hover {
+				color: #fff;
+			}
+		}
+	}
+}
+.navbar-toggler {
+	background: #fff;
+	padding: 1px 5px;
+	font-size: 18px;
+	line-height: 0.3;
+}
+.navbar-nav {
+	text-align: center;
+}
+.nav-link {
+	padding: .2rem 1rem;
+	&:focus {
+		color: #fff;
+	}
+}
+.nav-link.active {
+	color: #fff;
+}
+.link-area {
+	position: fixed;
+	bottom: 20px;
+	left: 20px;
+	padding: 15px;
+	border-radius: 40px;
+	background: tomato;
+	a {
+		text-decoration: none;
+		color: #fff;
+		font-size: 25px;
+	}
+}
+
+

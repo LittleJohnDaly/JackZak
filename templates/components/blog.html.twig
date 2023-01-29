@@ -1,0 +1,22 @@
+{% for blog in blogs %}
+    <div class="container px-4 px-lg-5 ">
+        <div class="row gx-4 gx-lg-5 align-items-center justify-content-center my-5">
+            <div class="col-lg-8">
+{#                <h1 class="mb-5 text-center">{{ title|upper }}</h1>#}
+                <div class="card mb-4">
+                        <img class="img-fluid rounded mb-4 mb-lg-0 w-100" src="{{ asset('img/blog/' ~ blog.img) }}" alt="{{ blog.alt }}">
+{#                    <a href="#encre">#}
+                    <div class="card-body">
+                        <div class="small text-muted">Date
+        {#                    {{ created_at }}#}
+                        </div>
+                        <h2 class="card-title">{{ blog.title }}</h2>
+                        <p class="card-text">{{ blog.abstract }}</p>
+                        <a class="btn btn-primary" href="{{ path('blogs')}}">Voir tous les articles →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+{#    reste a faire : encre avec la path, created_at, bouton dynamique qui disparait et le reste #}
