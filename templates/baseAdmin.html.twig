@@ -10,7 +10,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=7">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="espace administrateur du site {{ contact_company }}">
+        <meta name="description" content="Espace administrateur du site {{ contact_company }}">
 
         {# ######################################## title ######################################## #}
         <title>JZK - Admin - {% block title %}{% endblock %}</title>
@@ -31,8 +31,7 @@
         <link rel="manifest" href="{{ asset('img/favicon/site.webmanifest') }}">
 
         {# ######################################## custom CSS ######################################## #}
-        <link rel="stylesheet" href="{{ asset('css/base.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 
         {% block stylesheets %}{% endblock %}
 
@@ -42,7 +41,7 @@
 
         <header class="container-fluid bg-dark text-light p-3 text-center">
             <div class="row">
-                <div class="col-12">
+                <div class="col-md-12">
                     <h2>{{ contact_company }} - espace administrateur</h2>
                 </div>
             </div>
@@ -50,9 +49,9 @@
 
         <main class="container-fluid">
             <div class="row">
-                <div class="col-1 bg-secondary">
+                <div class="col-md-1 bg-secondary">
                     <nav>
-                        <ul class="pt-3">
+                        <ul class="pt-md-3 px-md-2 d-flex flex-row flex-md-column justify-content-around align-items-center">
                             <li class="py-2"><a href="{{ path('admin') }}" class="text-light" title="accueil adminsitrateur"><i class="bi bi-house fs-4"></i></a></li>
                             <li class="py-2"><a href="{{ path('admin_products') }}" class="text-light" title="produits"><i class="bi bi-dice-4 fs-4"></i></a></li>
                             <li class="py-2"><a href="{{ path('admin_blogs') }}" class="text-light" title="articles"><i class="bi bi-chat-right fs-4"></i></a></li>
@@ -67,7 +66,7 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="col-11">
+                <div class="col-md-11">
                     <div class="row p-5">
                         {% for label, messages in app.flashes %}
                             {% for message in messages %}
@@ -82,7 +81,7 @@
             </div>
         </main>
 
-        <footer class="container-fluid bg-dark text-light p-3 text-center pb-1 position-fixed bottom-0">
+        <footer class="container-fluid bg-dark text-light p-3 text-center pb-1">
             <p>Copyright &copy; {{ "now"|date("Y") }} - JackZak</p>
         </footer>
 

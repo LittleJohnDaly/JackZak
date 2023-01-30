@@ -5,38 +5,38 @@
 {% block body %}
     
     <h1 class="pb-5">Liste des articles</h1>
-
-    <table class="table table-hover text-center align-middle">
-        <thead>
-            <tr>
-                <th>N°</th>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for blog in blogs %} {# |reverse pour parcourir à l'envers #}
+    <div class="table-responsive">
+        <table class="table table-hover text-center align-middle">
+            <thead>
                 <tr>
-                    <td>{{ loop.index }}</td> {# ou revindex #}
-                    <td class="text-start">
-                        <img class="w-25" src="{{ asset('img/blog/' ~ blog.img) }}" alt="{{ blog.alt }}" class="pe-3">
-                        {{ blog.title }}
-                    </td>
-                    <td>{{ blog.description|u.truncate(50, '...', false) }}</td>
-                    <td>
-                        <a href="{{ path('blog_update', {'id': blog.id}) }}" class="me-2"><i class="bi bi-pencil-square text-primary"></i></a>
-                        <a href="{{ path('blog_delete', {'id': blog.id}) }}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce blog ?')"><i class="bi bi-trash text-danger"></i></a>
-                    </td>
+                    <th>N°</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Actions</th>
                 </tr>
-            {% else %}
-                <tr class="text-center">
-                    <td colspan="4">Aucun blog trouvé</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-
+            </thead>
+            <tbody>
+                {% for blog in blogs %} {# |reverse pour parcourir à l'envers #}
+                    <tr>
+                        <td>{{ loop.index }}</td> {# ou revindex #}
+                        <td class="text-start">
+                            <img class="w-25" src="{{ asset('img/blog/' ~ blog.img) }}" alt="{{ blog.alt }}" class="pe-3">
+                            {{ blog.title }}
+                        </td>
+                        <td>{{ blog.description|u.truncate(50, '...', false) }}</td>
+                        <td>
+                            <a href="{{ path('blog_update', {'id': blog.id}) }}" class="me-2"><i class="bi bi-pencil-square text-primary"></i></a>
+                            <a href="{{ path('blog_delete', {'id': blog.id}) }}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce blog ?')"><i class="bi bi-trash text-danger"></i></a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr class="text-center">
+                        <td colspan="4">Aucun blog trouvé</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
     <div class="text-end mt-4">
         <a href="{{ path('blog_create') }}" class="btn btn-success">Ajouter un blog</a>
     </div>

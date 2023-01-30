@@ -30,6 +30,10 @@ class BlogController extends AbstractController
             'blogs' => $blogRepository->findBy([], ['id' => 'DESC'])
         ]);
     }
+//    public function getCreatedAt(BlogRepository $blogRepository)
+//    {
+//        return $this->blogRepository->
+//    }
 
     #[Route('/admin/blogs', name: 'admin_blogs')]
     public function adminIndex(): Response

@@ -5,19 +5,13 @@
 {% block body %}
     
     <h1 class="mb-5">
-        {# {% if app.request.attributes.get('_route') == 'product_create' %}
-            Créer
-        {% else %}
-            Modifier
-        {% endif %} 
-        un produit #}
         {{ app.request.attributes.get('_route') == 'product_create' ? 'Créer' : 'Modifier' }} un produit
     </h1>
 
     {{ form_start(productForm) }}
 
         <div class="row">
-            <div class="col-6">
+            <div class="col-md-6">
                 {# {{ form_row(productForm.name) }} #}
                 {{ form_label(productForm.title, 'Titre') }} {# label #}
                 {{ form_errors(productForm.title) }} {# messages d'erreur #}
@@ -28,7 +22,7 @@
                 }) }} {# l'input #}
                 {{ form_help(productForm.title) }} {# message d'aide #}
             </div>
-            <div class="col-3">
+            <div class="col-md-3">
                 {{ form_row(productForm.quantity, {
                     'label': 'Quantité',
                     'attr': {
@@ -36,7 +30,7 @@
                     }
                 }) }}
             </div>
-            <div class="col-3">
+            <div class="col-md-3">
                 {{ form_row(productForm.price, {
                     'label': 'Prix (en €)',
                     'attr': {
@@ -47,7 +41,7 @@
         </div>
 
         <div class="row">
-            <div class="col-6">
+            <div class="col-md-6">
                 {{ form_row(productForm.abstract, {
                     'label': 'Résumé',
                     'attr': {
@@ -55,7 +49,7 @@
                     }
                 }) }}
             </div>
-            <div class="col-6">
+            <div class="col-md-6">
                 {{ form_row(productForm.description, {
                     'label': 'Description',
                     'attr': {
@@ -66,7 +60,7 @@
         </div>
 
         <div class="row">
-            <div class="col-3">
+            <div class="col-md-3">
                 {{ form_row(productForm.author, {
                     'label': 'Éditeur',
                     'attr': {
@@ -74,52 +68,52 @@
                     }
                 }) }}
             </div>
-            <div class="col-3">
+            <div class="col-md-3">
                 {{ form_row(productForm.category, {
                     'label': 'Catégorie',
                     'placeholder': '-- sélectionner --'
                 }) }}
             </div>
-            <div class="col-3">
+            <div class="col-md-3">
                 {{ form_row(productForm.pages) }}
             </div>
         </div>
         <div class="row">
-            <div class="col-4">
+            <div class="col-md-4">
                 {{ form_row(productForm.img1, {
                     'label': 'Image principale (obligatoire)'
                 }) }}
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 {{ form_row(productForm.img2, {
                     'label': 'Image secondaire 1 (optionnel)'
                 }) }}
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 {{ form_row(productForm.img3, {
                     'label': 'Image secondaire 2 (optionnel)'
                 }) }}
             </div>
         </div>
         <div class="row">
-            <div class="col-4">
+            <div class="col-md-4">
                 {{ form_row(productForm.alt1, {
                     'label': 'Texte alternatif image principale'
                 }) }}
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 {{ form_row(productForm.alt2, {
                     'label': 'Texte alternatif image secondaire 1'
                 }) }}
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 {{ form_row(productForm.alt3, {
                     'label': 'Texte alternatif image secondaire 2'
                 }) }}
             </div>
         </div>
         <div class="row">
-            <div class="col-12 text-end my-3">
+            <div class="col-md-12 text-end my-3">
                 <a href="{{ path('admin_products') }}" class="btn btn-outline-danger me-3">Annuler</a>
                 <button class="btn btn-success">{{ app.request.attributes.get('_route') == 'product_create' ? 'Créer' : 'Modifier' }}</button>
             </div>

@@ -2,7 +2,13 @@
 @import "overide_reboot";
 @import "overide_variables";
 @import "loop";
-@import "navbar";
+
+
+@media(max-width: map-get($grid-breakpoints, md)){
+  .logo {
+    max-width: 140px;
+  }
+}
 
 
 

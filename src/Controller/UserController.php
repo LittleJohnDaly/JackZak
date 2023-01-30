@@ -44,7 +44,7 @@ class UserController extends AbstractController
             $manager->persist($user);
             $manager->flush();
 
-            $this->addFlash('succes', 'Le nouvel utilisateur a bien été créé');
+            $this->addFlash('success', 'Le nouvel utilisateur a bien été créé');
             return $this->redirectToRoute('admin_users');
         }
 

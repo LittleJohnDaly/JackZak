@@ -25,6 +25,7 @@ class UserType extends AbstractType
                 ]
             ])
             ->add('roles', ChoiceType::class, [
+                'label' => 'Rôle',
                 'required' => false,
                 'mapped' => false,
                 'choices' => [
@@ -37,8 +38,9 @@ class UserType extends AbstractType
                 'type' => PasswordType::class,
                 'invalid_message' => 'Les deux mots de passe ne correspondent pas',
                 'mapped' => false,
-                'attr' => ['autocomplete' => 'new-password'],
+                'attr' => ['autocomplete' => 'new-password',],
                 'first_options' => [
+                    'label' => 'Mot de passe',
                     'constraints' => [
                         new NotBlank([
                             'message' => 'Merci de renseigner un mot de passe'
@@ -52,6 +54,7 @@ class UserType extends AbstractType
                     ] 
                 ],
                 'second_options' => [
+                    'label' => 'Confirmation mot de passe',
                     'constraints' => [
                         new NotBlank([
                             'message' => 'Merci de confirmer le mot de passe'
@@ -60,16 +63,19 @@ class UserType extends AbstractType
                 ]
             ])
             ->add('firstName', TextType::class, [
+                'label' => 'Prénom',
                 'attr' => [
                     'maxlength' => 100
                 ]
             ])
             ->add('lastName', TextType::class, [
+                'label' => 'Nom',
                 'attr' => [
                     'maxlength' => 100
                 ]
             ])
             ->add('phone', TextType::class, [
+                'label' => 'Téléphone',
                 'attr' => [
                     'maxlength' => 15
                 ]

@@ -50,6 +50,7 @@
                     <p>Thème : {{ product.category.name }}</p>
                 <hr class="text-secondary my-4">
                 <p class="text-end">
+                    <a href="#extraits" class="btn btn-secondary">Lire l'extrait</a>
                     <a href="{{ path('cart_add', {'id': product.id}) }}" class="btn btn-{{ product.quantity > 0 ? 'success' : 'danger disabled' }}">Ajouter au panier</a>
                 </p>
             </div>

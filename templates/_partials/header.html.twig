@@ -1,20 +1,31 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-primary">
-	<div class="container px-5">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+	<div class="container px-5 d-flex">
 		<a class="navbar-brand" href="{{ path('app_home') }}">
-			<img class="logo w-25" src="{{ asset('img/logo.png') }}" alt="logo JackZak">
+			<img class="logo w-75" src="{{ asset('img/logo.png') }}" alt="logo JackZak">
 		</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-				<li class="nav-item"><a class="nav-link" href="{{ path('app_home') }}">Accueil</a></li>
-				<li class="nav-item"><a class="nav-link" href="{{ path('products') }}">Livres</a></li>
-				<li class="nav-item"><a class="nav-link text-nowrap" href="{{ path('about') }}">A propos</a></li>
-				{% if is_granted('ROLE_SUPER_ADMIN', 'ROLE_ADMIN') %}
-					<li class="nav-item"><a class="nav-link" href="{{ path('admin') }}" class="text-light" title="utilisateurs">Admin</a></li>
-				{% endif %}
-				<li class="nav-item"><a class="nav-link" href="{{ path('contact') }}">Contact</a></li>
+				<li class="nav-item"><a class="nav-link active" href="{{ path('app_home') }}">Accueil</a></li>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+					<a class="nav-link active dropdown-toggle" href="{{ path('products') }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						Livres
+					</a>
+					<ul class="dropdown-menu">
+						{% for livre in get_livres() %}
+							<li><a class="dropdown-item" href="{{ path('product_show', {'slug' : livre.slug })}}"> {{ livre.title|u.truncate(35, '...')|capitalize }} - {{ livre.author }}</a></li>
+						{% endfor %}
+						<li><a class="dropdown-item" href="{{ path('products')}}"> Tous les livres </a></li>
+					</ul>
+				</li>
+				<li class="nav-item"><a class="nav-link active" href="{{ path('blogs') }}">Blog</a></li>
+				<li class="nav-item"><a class="nav-link active text-nowrap" href="{{ path('about') }}">A propos</a></li>
+				{% if is_granted('ROLE_SUPER_ADMIN', 'ROLE_ADMIN') %}
+					<li class="nav-item"><a class="nav-link active" href="{{ path('admin') }}" title="utilisateurs">Admin</a></li>
+				{% endif %}
+				<li class="nav-item"><a class="nav-link active" href="{{ path('contact') }}">Contact</a></li>
+				<li class="nav-item dropdown">
+					<a class="nav-link active dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
 						<i class="bi bi-person-circle"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -36,7 +47,7 @@
 					</ul>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="{{ path('cart') }}">
+					<a class="nav-link active" href="{{ path('cart') }}">
 						<i class="bi bi-cart-fill"></i>
 					</a>
 				</li>
